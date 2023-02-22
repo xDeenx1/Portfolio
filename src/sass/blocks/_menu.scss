@@ -1,0 +1,101 @@
+.menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.6s;
+    &.active {
+        left: 0;
+        visibility: visible;
+        opacity: 1;
+    }
+    &__block {
+        padding-top: 140px;
+        padding-left: 40px;
+        position: relative;
+        width: 20%;
+        height: 100%;
+        background-color: $main-color;
+        transition: all 0.6s;
+        z-index: 10;
+    }
+    &__close {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        cursor: pointer;
+    }
+    &__list {
+        padding-left: 35px;
+        list-style-type: none;
+    }
+    &__link {
+        position: relative;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 15px;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: -35px;
+            width: 15px;
+            height: 15px;
+            border: 1px solid #000000;
+            border-radius: 100%;
+            transition: all 0.5s;
+        }
+        a {
+            color: #fff;
+        }
+        &:hover {
+            &:before {
+                background-color: #fff;
+                border: none;
+            }
+        }
+    }
+    &__social {
+        width: 90px;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        svg  {
+            transform: rotate(90deg);
+        }
+        a {
+            &:hover {
+                svg path {
+                    fill: blue;
+                }
+            }
+        }
+        .i {
+            &:hover {
+                svg path {
+                    fill: #8a3ab9;
+                }
+            }
+        }
+        
+    }
+    &__overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        height: 100%;
+        background-color: #fff;
+        opacity: 0.75;
+        cursor: pointer;
+    }
+}

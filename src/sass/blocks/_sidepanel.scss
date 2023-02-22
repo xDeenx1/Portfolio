@@ -8,6 +8,20 @@
     flex-direction: column;
     justify-content: space-between;
     z-index: 3;
+    &__link {
+        &:hover {
+            svg path {
+                fill: blue;
+            }
+        }
+        &_i {
+            &:hover {
+                svg path {
+                    fill: #8a3ab9;
+                }
+            }
+        }
+    }
     &__divider {
         width: 2px;
         height: 70px;
