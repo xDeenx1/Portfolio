@@ -10,4 +10,18 @@
         top: -25%;
         left: 0;
     }
+};
+
+@mixin before_circle_icon {
+    &:before {
+        content: '';
+        position: absolute;
+        width: 36px;
+        height: 36px;
+        border-radius: 100%;
+        background: $main-color;
+        z-index: -1;
+        top: -13%;
+        left: 0;
+    }
 }

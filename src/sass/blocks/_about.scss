@@ -1,0 +1,55 @@
+.about {
+    margin: 120px 0;
+    min-height: 600px;
+    &__text{
+        padding-top: 10px;
+        &-elem {
+            &_subgrid {
+                margin-top: 40px;
+                display: grid;
+                grid-template: repeat(2, minmax(116px, auto)) / repeat(2,auto
+                );
+                gap: 20px 50px;
+            }
+        }
+
+    }
+    &__descr {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+    }
+}
+
+.grid-container {
+    display: grid;
+    width: 1040px;
+    height: 600px;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: 600px;
+    gap: 70px;
+}
+
+.subgrid {
+    &-elem {
+    display: flex;
+    justify-content: space-between;
+    }
+    &__text {
+        margin-left: 20px;
+    }
+    &__descr {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+}
+
+.icon_circle {
+    margin-top: 14px;
+    padding-left: 18px;
+    position: relative;
+    z-index: 2;
+    @include before_circle_icon;
+}
