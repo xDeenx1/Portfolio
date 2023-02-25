@@ -1,13 +1,17 @@
 .hamburger {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 30px;
     display: flex;
     flex-direction: column;
     height: 21px;
+    cursor: pointer;
     justify-content: space-between;
     align-items: flex-end;
-    cursor: pointer;
+    transition: all 0.6s;
+    &.not_active {
+        right: -100%;
+    }
     span {
         display: block;
         width: 30px;

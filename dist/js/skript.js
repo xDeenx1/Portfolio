@@ -5,14 +5,17 @@ const hamburger = document.querySelector('.hamburger'),
 
 hamburger.addEventListener('click', () => {
     menu.classList.add('active');
+    hamburger.classList.add('not_active');
 });
 
 closeElem.addEventListener('click', () => {
     menu.classList.remove('active');
+    hamburger.classList.remove('not_active');
 });
 
 closeOut.addEventListener('click', () => {
     menu.classList.remove('active');
+    hamburger.classList.remove('not_active');
 });
 
 
