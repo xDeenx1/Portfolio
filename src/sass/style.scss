@@ -21,12 +21,14 @@ a{
 }
 
 .divider {
+    display: block;
+    margin: 0 auto;
     width: 60px;
     height: 3px;
     background-color: $main-color;
     margin-top: 25px;
     &_about {
-        margin-top: 4px;
+        margin: 4px 0 0 0;
     }
 }
 
@@ -38,3 +40,4 @@ a{
 @import 'blocks/hamburger';
 @import 'blocks/menu';
 @import 'blocks/about';
+@import 'blocks/resume';

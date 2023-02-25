@@ -1,0 +1,99 @@
+.resume {
+    padding-top: 120px;
+    &__title {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        @include before_circle;
+        &:before {
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &__subtitle {
+        text-align: center;
+    }
+    &__wrapper {
+        display: grid;
+        padding: 60px 65px 0 65px;
+        grid-template-columns: repeat(2, 425px);
+        gap: 136px;
+    }
+    &__column {
+        &-title {
+            position: relative;
+            padding-left: 50px;
+            @include before_circle;
+            &:before {
+                width: 15px;
+                height: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            li {
+                position: relative;
+                &:after {
+                    content: '';
+                    width: 1px;
+                    height: calc(100% + 53px);
+                    background-color: #000;
+                    position: absolute;
+                    top: -53px;
+                    left: 6px;
+                }
+            }
+        }
+    }
+    &__item {
+        padding-left: 43px;
+        &-head {
+            position: relative;
+            display: flex;
+            margin-top: 45px;
+            &:before {
+                content: '';
+                position: absolute;
+                left: -36px;
+                top: 19px;
+                height: 1px;
+                width: 36px;
+                background-color: #000;
+            }
+        }
+        &-text {
+            margin-left: 19px;
+        }
+        &-title {
+            margin-bottom: 0;
+        }
+        &-subtitle {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 18px;
+            
+        }
+        &-body {
+            margin-top: 12px;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 18px;
+        }
+        &-icon {
+            position: relative;
+            padding-top: 14px;
+            padding-left: 18px;
+            @include before_circle;
+            &:before {
+                top: 0;
+            }
+        }
+        
+    }
+    
+}
