@@ -1,7 +1,9 @@
 const hamburger = document.querySelector('.hamburger'),
       menu = document.querySelector('.menu'),
       closeElem = document.querySelector('.menu__close'),
-      closeOut = document.querySelector('.menu__overlay');
+      closeOut = document.querySelector('.menu__overlay'),
+      percents = document.querySelectorAll('.level-item-percents'),
+      filling = document.querySelectorAll('.level-item-scale-filling');
 
 hamburger.addEventListener('click', () => {
     menu.classList.add('active');
@@ -17,6 +19,10 @@ closeOut.addEventListener('click', () => {
     menu.classList.remove('active');
     hamburger.classList.remove('not_active');
 });
+
+percents.forEach((item, i) => {
+    filling[i].style.width = item.innerHTML;
+} );
 
 
  
