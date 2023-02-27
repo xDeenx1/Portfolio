@@ -1,0 +1,41 @@
+.portfolio {
+    padding-top: 120px;
+    &__title {
+        text-align: center;
+        &::before {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &__subtitle {
+        text-align: center;
+    }
+    &__wrapper {
+        margin-top: 60px;
+        display: grid;
+        grid-template: repeat(2, 280px) / repeat(4, 280px);
+        grid-auto-rows: 280px;
+        gap: 5px;
+    }
+    &__item {
+        filter: grayscale(1);
+        transition: all 0.6s;
+        &:hover {
+            filter: grayscale(0);
+            transform: scale(1.1);
+            z-index: 2;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        &-plans {
+            grid-row: 1 / 3;
+            grid-column: 4 / 5;
+        }
+        &-mac {
+            grid-row: 2 / 3;
+            grid-column: 2 / 4;
+        }
+    }
+}
