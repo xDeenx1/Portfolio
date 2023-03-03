@@ -1,0 +1,117 @@
+@media screen and (max-width:1320px) {
+    .sidepanel {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+    .menu {
+        nav {
+            height: 100vh;
+        }
+        &__block {
+            width: 40%;
+        }
+        &__overlay {
+            width: 60%;
+        }
+    }
+    .about {
+        &__wrapper {
+            grid-template: repeat(2, minmax(245px, auto)) / 300px 625px;
+            gap:40px 35px;
+        }
+    }
+    
+
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+    .about {
+        padding-top: 50px;
+        &__wrapper {
+            grid-template: repeat(2, minmax(245px, auto)) / 300px auto;
+            grid-auto-rows: auto;
+        }
+        &__skills {
+            grid-template: repeat(2, auto) / auto;
+            &-item {
+                grid-template-columns: 40px auto;
+            }
+        }
+    }
+    .title {
+        font-size: 30px;
+        &_promo {
+            font-size: 48px;
+        }
+        &_fz20 {
+            font-size: 20px;
+        }
+        &_fz16 {
+            font-size: 16px;
+        }
+        &_fz14 {
+            font-size: 14px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+    .title {
+        &_promo {
+            width: 300px;
+            font-size: 26px;
+            line-height: 39px;
+        }
+    }
+    .menu {
+        &__block {
+            width: 50%;
+        }
+        &__overlay {
+            width: 50%;
+        }
+    }
+
+    .hamburger {
+        right: 20px;
+    }
+
+    .about {
+        &__wrapper {
+            grid-template: 400px auto auto / 1fr;
+        }
+        &__photo {
+            grid-row: unset;
+        }
+        &__skills {
+            grid-template: repeat(2,auto);
+            gap: 20px 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 546px) {
+    .container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    .menu {
+        &__block {
+            width: 70%;
+        }
+        &__overlay {
+            width: 30%;
+        }
+    }
+}
