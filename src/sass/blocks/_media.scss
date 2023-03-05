@@ -26,6 +26,38 @@
         }
     }
     
+    .resume {
+        &__wrapper {
+            grid-template-columns: auto;
+            gap: 50px;
+        }
+        &__item {
+            &-head {
+                margin-top: 35px;
+            }
+        }
+        &__column {
+            ul {
+                li {
+                    &:after {
+                        height: calc(100% + 43px);
+                        top: -43px;
+                    }
+                }
+            }
+        }
+    }
+    .skills {
+        &__wrapper {
+            margin: 60px 77px 0 60px;
+            grid-template: repeat(2, minmax(270px, auto)) / repeat(3, 270px);
+            gap: 25px;
+        }
+        &__level {
+            grid-template: repeat(2, minmax(70px, auto)) / repeat(2, 350px);
+        }
+    }
+    
 
 }
 
@@ -34,7 +66,7 @@
         max-width: 720px;
     }
     .about {
-        padding-top: 50px;
+        padding-top: 70px;
         &__wrapper {
             grid-template: repeat(2, minmax(245px, auto)) / 300px auto;
             grid-auto-rows: auto;
@@ -59,6 +91,21 @@
         }
         &_fz14 {
             font-size: 14px;
+        }
+    }
+    .resume {
+        padding-top: 70px;
+    }
+    .skills {
+        padding-top: 70px;
+        &__wrapper {
+            margin: 60px 77px 0 77px;
+            grid-template: repeat(2, minmax(270px, auto)) / repeat(2, 270px);
+            gap: 25px;
+        }
+        &__level {
+            grid-template: repeat(2, minmax(70px, auto)) / repeat(2, 350px);
+            gap: 30px 35px;
         }
     }
 }
@@ -99,6 +146,16 @@
             gap: 20px 20px;
         }
     }
+    .skills {
+        &__wrapper {
+            margin: 60px 0 0 0;
+            gap: 5px;
+        }
+        &__level {
+            grid-template: repeat(2, minmax(70px, auto)) / repeat(2, 260px);
+            gap: 20px;
+        }
+    }
 }
 
 @media screen and (max-width: 546px) {
@@ -114,4 +171,21 @@
             width: 30%;
         }
     }
+    .resume {
+        &__wrapper {
+            padding: 60px 0 0 0;
+        }
+    }
+    .skills {
+        &__wrapper {
+            margin: 20px 0 0 0;
+            grid-template: repeat(2, minmax(270px, auto)) / auto;
+            gap: 20px;
+        }
+        &__level {
+            grid-template: repeat(2, minmax(70px, auto)) / auto;
+            gap: 20px;
+        }
+    }
+    
 }
