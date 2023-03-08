@@ -49,15 +49,46 @@
     }
     .skills {
         &__wrapper {
-            margin: 60px 77px 0 60px;
+            margin-top: 60px;
             grid-template: repeat(2, minmax(270px, auto)) / repeat(3, 270px);
+            justify-content: center;
             gap: 25px;
         }
         &__level {
             grid-template: repeat(2, minmax(70px, auto)) / repeat(2, 350px);
+            justify-content: center;
         }
     }
-    
+    .portfolio {
+        &__wrapper {
+            grid-template: repeat(2, 280px) / repeat(auto-fit, 280px);
+            justify-content: center;
+        }
+        &__item {
+            &-plans {
+                grid-row: unset;
+                grid-column: unset;
+            }
+            &-mac {
+                grid-row: unset;
+                grid-column: unset;
+            }
+        }
+    }
+    .contacts {
+        &__wrapper {
+            margin: 0;
+            grid-template-columns: 400px 520px;
+            gap: 10px;
+        }
+        form {
+            grid-template: 45px 190px 45px / repeat(2, 250px);        
+        }
+        &__submit {
+            column-gap: 25px;
+        }
+
+    }
 
 }
 
@@ -99,7 +130,6 @@
     .skills {
         padding-top: 70px;
         &__wrapper {
-            margin: 60px 77px 0 77px;
             grid-template: repeat(2, minmax(270px, auto)) / repeat(2, 270px);
             gap: 25px;
         }
@@ -107,6 +137,46 @@
             grid-template: repeat(2, minmax(70px, auto)) / repeat(2, 350px);
             gap: 30px 35px;
         }
+    }
+    .portfolio {
+        padding-top: 70px;
+        &__item {
+            filter: none;
+            &:hover {
+                filter: unset;
+                transform: unset;
+                z-index: unset;
+            }
+        }
+    }
+    .pricelist {
+        padding-top: 70px;
+        &__wrapper {
+            margin: 60px 0 0 0;
+            grid-template-columns: repeat(auto-fit, 300px);
+            gap: 15px;
+            justify-content: space-between;
+        }
+    }
+    .contacts {
+        padding: 70px 0 50px 0;
+        &__wrapper {
+            margin: 0;
+            grid-template-columns: 300px 400px;
+            gap: 10px;
+        }
+        form {
+            grid-template: 45px 190px 45px / repeat(2, 195px);  
+            gap: 30px 10px;
+            button {
+                line-height: 16px;
+                padding: 8px 25px;
+            }  
+        }
+        &__submit {
+            column-gap: 25px;
+        }
+
     }
 }
 
@@ -148,7 +218,6 @@
     }
     .skills {
         &__wrapper {
-            margin: 60px 0 0 0;
             gap: 5px;
         }
         &__level {
@@ -156,9 +225,48 @@
             gap: 20px;
         }
     }
+    .pricelist {
+        &__wrapper {
+            justify-content: center;
+        }
+    }
+    .contacts {
+        &__photo {
+            display: none;
+        }
+        &__title {
+            text-align: center;
+            &::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        &__subtitle {
+            text-align: center;
+        }
+        &__wrapper {
+            grid-template-columns: 1fr;
+            justify-content: center;
+        }
+        &__text {
+            text-align: center;
+        }
+        &__social {
+            text-align: center;
+        }
+        form {
+            grid-template: 45px 190px 45px/ repeat(2,auto);
+        }
+    }
+    .divider {
+        &_contacts {
+            margin: 0 auto;
+        }
+    }
+
 }
 
-@media screen and (max-width: 546px) {
+@media screen and (max-width: 576px) {
     .container {
         max-width: 100%;
         padding: 0 10px;
@@ -183,9 +291,31 @@
             gap: 20px;
         }
         &__level {
-            grid-template: repeat(2, minmax(70px, auto)) / auto;
+            grid-template: repeat(2, minmax(70px, auto)) / 100%;
             gap: 20px;
         }
     }
+    .contacts {
+        form {
+            grid-template: 45px 45px 190px 45px / auto;
+            gap: 20px;
+        }
+        &__textarea {
+            grid-column: unset;
+        }
+        &__submit {
+            grid-template-columns: auto;
+            grid-column: unset;
+            gap: 20px;
+        }
+        &__policy {
+            grid-row: 1;
+            input {
+                margin-right: 7px;
+            }
+        }
+    }
+
+
     
 }

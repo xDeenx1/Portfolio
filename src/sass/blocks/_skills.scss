@@ -24,11 +24,14 @@
         padding: 30px 30px 25px 30px;
         border: 1px solid black;
         img {
+            display: block;
+            margin: 0 auto;
             max-width: 100%;
             min-height: 65px;
         }
         &-title {
             margin-top: 20px;
+            text-align: center;
         }
         &-descr {
             margin-top: 15px;
