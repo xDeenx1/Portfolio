@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { v4 as uiidv4 } from 'uuid';
-import { useHttp } from "../../hooks/http.hook";
-import { useDispatch, useSelector } from "react-redux";
-import { addHero } from '../heroesList/heroesSlice';
+import { useSelector } from "react-redux";
 import { selectAll as selectAllFilters } from "../heroesFilters/filtersSlice";
+import { useCreateHeroMutation } from "../../api/apiSlice";
 
 const HeroesAddForm = () => {
-    const [newHero, setNewHero] = useState({
+    const [hero, setHero] = useState({
         "id": '',
         "name": '',
         "description": '',
@@ -14,36 +13,31 @@ const HeroesAddForm = () => {
         'thumbnail':''
     });
 
+    const [createHero, {isLoading}] = useCreateHeroMutation();
+
     const filters = useSelector(selectAllFilters);
     const {filtersLoadingStatus} = useSelector(state => state.filters);
-    const {request} = useHttp();
-    const dispatch = useDispatch();
 
     const onSubmit = async(e) => {
         e.preventDefault();
 
-        const addNewHero = {
+        const newHero = {
             "id": uiidv4(),
-            "name": newHero.name,
-            "description": newHero.description,
-            "element": newHero.element,
-            "thumbnail": newHero.thumbnail
+            "name": hero.name,
+            "description": hero.description,
+            "element": hero.element,
+            "thumbnail": hero.thumbnail
         }
 
-        await request(`http://localhost:3001/heroes`,'POST', JSON.stringify(addNewHero))
-            .then(data => console.log(data, "ADDED"))
-            .then(dispatch(addHero(addNewHero)))
-            .catch(error => console.log(error));
+        createHero(newHero).unwrap();
 
-        setNewHero({
+        setHero({
             "id": '',
             "name": '',
             "description": '',
             "element": '',
             'thumbnail':''
         });
-        
-    
     }
 
     const renderFilters = (filters, status) => {
@@ -77,8 +71,8 @@ const HeroesAddForm = () => {
                     className="form-control" 
                     id="name" 
                     placeholder="What is my name?"
-                    onChange={(e) => setNewHero({...newHero, name: e.target.value})}
-                    value={newHero.name}/>
+                    onChange={(e) => setHero({...hero, name: e.target.value})}
+                    value={hero.name}/>
             </div>
 
             <div className="mb-3">
@@ -90,8 +84,8 @@ const HeroesAddForm = () => {
                     id="text" 
                     placeholder="What is my power?"
                     style={{"height": '130px'}}
-                    onChange={(e) => setNewHero({...newHero, description: e.target.value})}
-                    value={newHero.description}/>
+                    onChange={(e) => setHero({...hero, description: e.target.value})}
+                    value={hero.description}/>
             </div>
 
             <div className="mb-3">
@@ -101,7 +95,7 @@ const HeroesAddForm = () => {
                     className="form-select" 
                     id="element" 
                     name="element"
-                    onChange={(e) => setNewHero({...newHero, element: e.target.value})}
+                    onChange={(e) => setHero({...hero, element: e.target.value})}
                     >
                     <option >My power element is...</option>
                     {filterList}
@@ -111,14 +105,13 @@ const HeroesAddForm = () => {
             <div className="mb-3">
                 <label htmlFor="thumbnail" className="form-label fs-4">Input link to a new hero image</label>
                 <input 
-                    required
                     type="text" 
                     name="thumbnail" 
                     className="form-control" 
                     id="thumbnail" 
                     placeholder="Link to hero image."
-                    onChange={(e) => setNewHero({...newHero, thumbnail: e.target.value})}
-                    value={newHero.thumbnail}
+                    onChange={(e) => setHero({...hero, thumbnail: e.target.value})}
+                    value={hero.thumbnail}
                     />
             </div>
 
